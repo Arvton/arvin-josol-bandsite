@@ -1,0 +1,28 @@
+@use './variables' as *;
+
+.header {
+    background-color: $BandSite-Black;
+
+    & a:visited {
+        color: $White;
+    }
+
+    &__logo {
+        color: $White;
+        text-align: center;
+        line-height: 1;
+        padding: 1rem 0rem;
+    }
+
+    &__navigation-container {
+        display: flex;
+        align-content: center;
+    }
+
+    &__navigation-item {
+        color: $White;
+        text-align: center;
+        padding: 1rem 0rem;
+        flex: 1;
+    }
+}
