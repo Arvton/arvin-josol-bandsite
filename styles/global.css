@@ -19,7 +19,7 @@ ul {
 @font-face {
   font-family: "Avenir";
   src: url(../../assets/fonts/AvenirNextLTPro-Regular.otf) format("otf"), url(../../assets/fonts/alternatives/AvenirNextLTPro.ttf) format("ttf");
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
 }
 @font-face {
@@ -35,7 +35,7 @@ ul {
   font-style: normal;
 }
 body {
-  font-family: Avenir, Arial, sans-serif;
+  font-family: "Avenir", Arial, sans-serif;
   font-size: 2rem;
 }
 
@@ -44,25 +44,36 @@ body {
   display: flex;
   flex-direction: column;
 }
-.header a:visited {
-  color: #FFFFFF;
-}
 .header__logo {
   color: #FFFFFF;
   text-align: center;
   font-size: 2.5rem;
+  font-weight: 400;
   max-width: 15rem;
   line-height: 1;
   padding: 1rem 0rem;
   align-self: center;
+}
+.header__logo:visited {
+  color: #FFFFFF;
 }
 .header__navigation-container {
   display: flex;
   align-content: center;
 }
 .header__navigation-item {
-  color: #FFFFFF;
+  color: #E1E1E1;
   text-align: center;
   padding: 1rem 0rem;
   flex: 1;
+  font-size: 1.625rem;
+  line-height: 2.25rem;
+  font-weight: 400;
+}
+.header__navigation-item:visited {
+  color: #E1E1E1;
+}
+.header__navigation-item:hover {
+  color: #FFFFFF;
+  border-bottom: solid 4px #FFFFFF;
 }/*# sourceMappingURL=global.css.map */

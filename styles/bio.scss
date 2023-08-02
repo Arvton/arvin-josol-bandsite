@@ -1,0 +1,9 @@
+@use './partials/variables' as *;
+
+nav {
+    a[href^="./index.html"] {
+        color: $White;
+        border-bottom: solid 4px $White;
+        font-weight: bold;
+    }
+}

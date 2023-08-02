@@ -1,23 +1,23 @@
 @use './variables' as *;
-
+@use './typography' as *;
 .header {
     background-color: $BandSite-Black;
     display: flex;
     flex-direction: column;
 
-
-    & a:visited {
-        color: $White;
-    }
-
     &__logo {
         color: $White;
         text-align: center;
         font-size: 2.5rem;
+        font-weight: 400;
         max-width: 15rem;
         line-height: 1;
         padding: 1rem 0rem;
         align-self: center;
+
+        &:visited {
+            color: $White;
+        }
     }
 
     &__navigation-container {
@@ -26,9 +26,19 @@
     }
 
     &__navigation-item {
-        color: $White;
+        color: $Mercury;
         text-align: center;
         padding: 1rem 0rem;
         flex: 1;
+        @include body-copy;
+
+        &:visited {
+            color: $Mercury;
+        }
+
+        &:hover {
+            color: $White;
+            border-bottom: solid 4px $White;
+        }
     }
 }
