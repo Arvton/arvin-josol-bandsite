@@ -2,6 +2,9 @@
 
 .header {
     background-color: $BandSite-Black;
+    display: flex;
+    flex-direction: column;
+
 
     & a:visited {
         color: $White;
@@ -10,8 +13,11 @@
     &__logo {
         color: $White;
         text-align: center;
+        font-size: 2.5rem;
+        max-width: 15rem;
         line-height: 1;
         padding: 1rem 0rem;
+        align-self: center;
     }
 
     &__navigation-container {
