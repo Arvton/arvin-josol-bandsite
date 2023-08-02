@@ -2,3 +2,39 @@ body {
     font-family: Avenir, Arial, sans-serif;
     font-size: 2rem;
 }
+
+@mixin page-header {
+    font-size: 3rem;
+    line-height: 4rem;
+    font-weight: 700;
+}
+
+@mixin section-header {
+    font-size: 3rem;
+    line-height: 4rem;
+    font-weight: 700;
+}
+
+@mixin subheader {
+    font-size: 1.75rem;
+    line-height: 2.75rem;
+    font-weight: 600;
+}
+
+@mixin body-copy {
+    font-size: 1.625rem;
+    line-height: 2.25rem;
+    font-weight: 400;
+}
+
+@mixin footer-copy {
+    font-size: 1.625rem;
+    line-height: 2.25rem;
+    font-weight: 400;
+}
+
+@mixin labels-and-buttons {
+    font-size: 1.25rem;
+    line-height: 2.5rem;
+    font-weight: 700;
+}
