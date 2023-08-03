@@ -12,7 +12,7 @@
         font-weight: 400;
         max-width: 15rem;
         line-height: 1;
-        padding: 1rem 0rem;
+        padding: 2rem 0rem 1rem;
         align-self: center;
 
         &:visited {
@@ -22,7 +22,6 @@
 
     &__navigation-container {
         display: flex;
-        align-content: center;
     }
 
     &__navigation-item {
