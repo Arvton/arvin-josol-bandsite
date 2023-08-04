@@ -1,4 +1,5 @@
 @use './partials/variables' as *;
+@use './partials/typography' as *;
 @use './partials/hero';
 
 nav {
@@ -6,5 +7,38 @@ nav {
         color: $White;
         border-bottom: solid 4px $White;
         font-weight: bold;
+    }
+}
+
+.about {
+    @include padding-screen;
+
+    &__title {
+        @include section-header;
+        color: $BandSite-Black;
+        @include padding-headline;
+    }
+
+    &__image {
+        width: 100%;
+        height: 22rem;
+        object-fit: cover;
+        @include padding-components;
+    }
+
+    &__subheader {
+        @include subheader;
+        @include padding-components;
+    }
+
+    &__text {
+        @include body-copy;
+        color: $BandSite-Black;
+        @include padding-components;
+
+        &--quote {
+            font-weight: 600;
+            line-height: 3rem;
+        }
     }
 }

@@ -6,7 +6,7 @@
     background-position: center;
     background-size: cover;
     height: 23rem;
-    padding: 0rem 2rem;
+    @include padding-screen;
     display: flex;
     align-items: center;
     position: relative;
