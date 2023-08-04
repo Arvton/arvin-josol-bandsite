@@ -1,3 +1,35 @@
+body {
+  font-family: "Avenir", Arial, sans-serif;
+  font-size: 2rem;
+}
+
+.hero {
+  background-image: url(../assets/images/hero-bio.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 23rem;
+  padding: 0rem 2rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.hero::before {
+  content: "";
+  background-color: rgba(50, 50, 50, 0.5);
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+.hero__title {
+  font-size: 3rem;
+  line-height: 4rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  z-index: 1;
+}
+
 nav a[href^="./index.html"] {
   color: #FFFFFF;
   border-bottom: solid 4px #FFFFFF;

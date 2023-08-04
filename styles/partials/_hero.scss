@@ -1,0 +1,29 @@
+@use './variables' as *;
+@use './typography' as *;
+
+.hero {
+    background-image: url(../assets/images/hero-bio.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 23rem;
+    padding: 0rem 2rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    &::before {
+        content: "";
+        background-color: rgba($color: $BandSite-Black, $alpha: 0.5);
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+    }
+
+    &__title {
+        @include page-header;
+        color: $White;
+        z-index: 1;
+    }
+}
