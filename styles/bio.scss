@@ -42,3 +42,22 @@ nav {
         }
     }
 }
+
+.gallery {
+    background-color: $Alabaster;
+    display: flex;
+    flex-direction: column;
+    @include padding-screen;
+
+    &__title {
+        @include section-header;
+        color: $BandSite-Black;
+        @include padding-headline;
+    }
+
+    &__image {
+        width: 100%;
+        object-fit: cover;
+        @include padding-components;
+    }
+}

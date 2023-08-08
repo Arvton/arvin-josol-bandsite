@@ -69,4 +69,24 @@ nav a[href^="./index.html"] {
 .about__text--quote {
   font-weight: 600;
   line-height: 3rem;
+}
+
+.gallery {
+  background-color: #FAFAFA;
+  display: flex;
+  flex-direction: column;
+  padding: 0rem 2rem;
+}
+.gallery__title {
+  font-size: 3rem;
+  line-height: 4rem;
+  font-weight: 700;
+  color: #323232;
+  padding: 3rem 0rem 1rem;
+}
+.gallery__image {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  padding-bottom: 2rem;
 }/*# sourceMappingURL=bio.css.map */
