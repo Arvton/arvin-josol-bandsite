@@ -1,0 +1,68 @@
+@use './variables' as *;
+@use './typography' as *;
+
+.footer {
+    background-color: $BandSite-Black;
+    @include padding-screen;
+
+    &__socials {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__title {
+        @include section-header;
+        font-weight: 600;
+        color: $White;
+        @include padding-headline;
+    }
+
+    &__icon-wrapper {
+        padding-top: 1rem;
+        @include padding-components;
+    }
+
+    &__icon {
+        padding-right: 3rem;
+    }
+
+    &__contact-wrapper {
+        padding-bottom: 5rem;
+    }
+
+    &__contact-card {
+        @include footer-copy;
+        color: $White;
+        padding-bottom: 3rem;
+    }
+
+    &__contact-name {
+        font-weight: 600;
+        @include padding-components;
+    }
+
+    &__contact-info {
+        @include padding-components;
+    }
+
+    &__contact-email {
+        color: $White;
+    }
+
+    &__logo {
+        color: $White;
+        font-size: 2.5rem;
+        font-weight: 400;
+        max-width: 15rem;
+        line-height: 1;
+        @include padding-components;
+    }
+
+    &__copyright {
+        @include footer-copy;
+        font-size: 1.25rem;
+        color: $White;
+        @include padding-components;
+    }
+
+}
