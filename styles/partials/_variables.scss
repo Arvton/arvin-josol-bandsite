@@ -8,15 +8,6 @@ $BandSite-DarkBlack: #000000;
 $Mercury: #E1E1E1;
 $Alabaster: #FAFAFA;
 
-//mixins for padding
-// @mixin padding-screen {
-//     padding: 0rem 2rem;
-// }
-
-// @mixin padding-headline {
-//     padding: 3rem 0rem 1rem;
-// }
-
-// @mixin padding-components {
-//     padding-bottom: 2rem;
-// }
+//breakpoints for responsiveness
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 1280px;

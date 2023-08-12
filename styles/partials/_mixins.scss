@@ -1,13 +1,39 @@
 @use './variables' as *;
 
+//responsive design mixins
+@mixin tablet {
+    @media screen and (min-width: $tablet-breakpoint) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width: $desktop-breakpoint) {
+        @content;
+    }
+}
+
+//padding mixins
 @mixin padding-screen {
     padding: 0rem 2rem;
+
+    @include tablet {
+        padding: 0rem 4.5rem;
+    }
 }
 
 @mixin padding-headline {
     padding: 3rem 0rem 1rem;
+
+    @include tablet {
+        padding: 6rem 0rem 3.5rem;
+    }
 }
 
 @mixin padding-components {
     padding-bottom: 2rem;
+
+    @include tablet {
+        padding-bottom: 4.5rem;
+    }
 }

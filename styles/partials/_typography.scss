@@ -1,3 +1,5 @@
+@use './mixins' as *;
+
 body {
     font-family: "Avenir", Arial, sans-serif;
     font-size: 2rem;
@@ -7,34 +9,64 @@ body {
     font-size: 3rem;
     line-height: 4rem;
     font-weight: 700;
+
+    @include tablet {
+        font-size: 7.5rem;
+        line-height: 8.5rem;
+    }
 }
 
 @mixin section-header {
     font-size: 3rem;
     line-height: 4rem;
     font-weight: 700;
+
+    @include tablet {
+        font-size: 4.5rem;
+        line-height: 5.5rem;
+    }
 }
 
 @mixin subheader {
     font-size: 1.75rem;
     line-height: 2.75rem;
     font-weight: 600;
+
+    @include tablet {
+        font-size: 3rem;
+        line-height: 4rem;
+    }
 }
 
 @mixin body-copy {
     font-size: 1.625rem;
     line-height: 2.25rem;
     font-weight: 400;
+
+    @include tablet {
+        font-size: 1.75rem;
+        line-height: 2.75rem;
+    }
 }
 
 @mixin footer-copy {
     font-size: 1.625rem;
     line-height: 2.25rem;
     font-weight: 400;
+
+    @include tablet {
+        font-size: 1.75rem;
+        line-height: 2.5rem;
+    }
 }
 
 @mixin labels-and-buttons {
     font-size: 1.25rem;
     line-height: 2.5rem;
     font-weight: 700;
+
+    @include tablet {
+        font-size: 1.5rem;
+        line-height: 2.5rem;
+    }
 }

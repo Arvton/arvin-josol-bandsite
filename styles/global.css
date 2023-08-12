@@ -69,6 +69,12 @@ body {
   line-height: 2.25rem;
   font-weight: 400;
 }
+@media screen and (min-width: 768px) {
+  .header__navigation-item {
+    font-size: 1.75rem;
+    line-height: 2.75rem;
+  }
+}
 .header__navigation-item:visited {
   color: #E1E1E1;
 }
@@ -80,6 +86,11 @@ body {
 .footer {
   background-color: #323232;
   padding: 0rem 2rem;
+}
+@media screen and (min-width: 768px) {
+  .footer {
+    padding: 0rem 4.5rem;
+  }
 }
 .footer__socials {
   display: flex;
@@ -93,9 +104,25 @@ body {
   color: #FFFFFF;
   padding: 3rem 0rem 1rem;
 }
+@media screen and (min-width: 768px) {
+  .footer__title {
+    font-size: 4.5rem;
+    line-height: 5.5rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .footer__title {
+    padding: 6rem 0rem 3.5rem;
+  }
+}
 .footer__icon-wrapper {
   padding-top: 1rem;
   padding-bottom: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .footer__icon-wrapper {
+    padding-bottom: 4.5rem;
+  }
 }
 .footer__icon {
   padding-right: 3rem;
@@ -110,12 +137,28 @@ body {
   color: #FFFFFF;
   padding-bottom: 3rem;
 }
+@media screen and (min-width: 768px) {
+  .footer__contact-card {
+    font-size: 1.75rem;
+    line-height: 2.5rem;
+  }
+}
 .footer__contact-name {
   font-weight: 600;
   padding-bottom: 2rem;
 }
+@media screen and (min-width: 768px) {
+  .footer__contact-name {
+    padding-bottom: 4.5rem;
+  }
+}
 .footer__contact-info {
   padding-bottom: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .footer__contact-info {
+    padding-bottom: 4.5rem;
+  }
 }
 .footer__contact-email {
   color: #FFFFFF;
@@ -128,6 +171,11 @@ body {
   line-height: 1;
   padding-bottom: 2rem;
 }
+@media screen and (min-width: 768px) {
+  .footer__logo {
+    padding-bottom: 4.5rem;
+  }
+}
 .footer__copyright {
   font-size: 1.625rem;
   line-height: 2.25rem;
@@ -135,4 +183,15 @@ body {
   font-size: 1.25rem;
   color: #FFFFFF;
   padding-bottom: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .footer__copyright {
+    font-size: 1.75rem;
+    line-height: 2.5rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .footer__copyright {
+    padding-bottom: 4.5rem;
+  }
 }/*# sourceMappingURL=global.css.map */

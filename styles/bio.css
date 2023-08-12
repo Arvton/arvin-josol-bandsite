@@ -13,6 +13,11 @@ body {
   align-items: center;
   position: relative;
 }
+@media screen and (min-width: 768px) {
+  .hero {
+    padding: 0rem 4.5rem;
+  }
+}
 .hero::before {
   content: "";
   background-color: rgba(50, 50, 50, 0.5);
@@ -29,6 +34,12 @@ body {
   color: #FFFFFF;
   z-index: 1;
 }
+@media screen and (min-width: 768px) {
+  .hero__title {
+    font-size: 7.5rem;
+    line-height: 8.5rem;
+  }
+}
 
 nav a[href^="./index.html"] {
   color: #FFFFFF;
@@ -39,12 +50,28 @@ nav a[href^="./index.html"] {
 .about {
   padding: 0rem 2rem;
 }
+@media screen and (min-width: 768px) {
+  .about {
+    padding: 0rem 4.5rem;
+  }
+}
 .about__title {
   font-size: 3rem;
   line-height: 4rem;
   font-weight: 700;
   color: #323232;
   padding: 3rem 0rem 1rem;
+}
+@media screen and (min-width: 768px) {
+  .about__title {
+    font-size: 4.5rem;
+    line-height: 5.5rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .about__title {
+    padding: 6rem 0rem 3.5rem;
+  }
 }
 .about__image {
   width: 100%;
@@ -53,11 +80,27 @@ nav a[href^="./index.html"] {
      object-fit: cover;
   padding-bottom: 2rem;
 }
+@media screen and (min-width: 768px) {
+  .about__image {
+    padding-bottom: 4.5rem;
+  }
+}
 .about__subheader {
   font-size: 1.75rem;
   line-height: 2.75rem;
   font-weight: 600;
   padding-bottom: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .about__subheader {
+    font-size: 3rem;
+    line-height: 4rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .about__subheader {
+    padding-bottom: 4.5rem;
+  }
 }
 .about__text {
   font-size: 1.625rem;
@@ -65,6 +108,17 @@ nav a[href^="./index.html"] {
   font-weight: 400;
   color: #323232;
   padding-bottom: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .about__text {
+    font-size: 1.75rem;
+    line-height: 2.75rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .about__text {
+    padding-bottom: 4.5rem;
+  }
 }
 .about__text--quote {
   font-weight: 600;
@@ -77,6 +131,11 @@ nav a[href^="./index.html"] {
   flex-direction: column;
   padding: 0rem 2rem;
 }
+@media screen and (min-width: 768px) {
+  .gallery {
+    padding: 0rem 4.5rem;
+  }
+}
 .gallery__title {
   font-size: 3rem;
   line-height: 4rem;
@@ -84,9 +143,25 @@ nav a[href^="./index.html"] {
   color: #323232;
   padding: 3rem 0rem 1rem;
 }
+@media screen and (min-width: 768px) {
+  .gallery__title {
+    font-size: 4.5rem;
+    line-height: 5.5rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .gallery__title {
+    padding: 6rem 0rem 3.5rem;
+  }
+}
 .gallery__image {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   padding-bottom: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .gallery__image {
+    padding-bottom: 4.5rem;
+  }
 }/*# sourceMappingURL=bio.css.map */
