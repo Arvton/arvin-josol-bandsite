@@ -1,0 +1,13 @@
+@use './variables' as *;
+
+@mixin padding-screen {
+    padding: 0rem 2rem;
+}
+
+@mixin padding-headline {
+    padding: 3rem 0rem 1rem;
+}
+
+@mixin padding-components {
+    padding-bottom: 2rem;
+}
