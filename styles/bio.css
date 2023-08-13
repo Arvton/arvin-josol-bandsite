@@ -78,6 +78,11 @@ nav a[href^="./index.html"] {
     padding: 6rem 0rem 3.5rem;
   }
 }
+@media screen and (min-width: 768px) {
+  .about__content-wrapper {
+    padding: 0rem 8rem;
+  }
+}
 .about__image {
   width: 100%;
   height: 22rem;
@@ -88,6 +93,38 @@ nav a[href^="./index.html"] {
 @media screen and (min-width: 768px) {
   .about__image {
     padding-bottom: 4.5rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .about__image {
+    height: 43rem;
+  }
+}
+.about__quote {
+  color: #323232;
+  font-size: 1.625rem;
+  line-height: 3rem;
+  font-weight: 600;
+  padding-bottom: 0.5rem;
+}
+@media screen and (min-width: 768px) {
+  .about__quote {
+    font-size: 2.75rem;
+    line-height: 3.75rem;
+    padding-bottom: 1rem;
+  }
+}
+.about__quote-credit {
+  color: #323232;
+  font-size: 1.625rem;
+  line-height: 3rem;
+  font-weight: 600;
+  padding-bottom: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .about__quote-credit {
+    font-size: 2rem;
+    padding-bottom: 6rem;
   }
 }
 .about__subheader {
@@ -104,7 +141,13 @@ nav a[href^="./index.html"] {
 }
 @media screen and (min-width: 768px) {
   .about__subheader {
-    padding-bottom: 4.5rem;
+    padding-bottom: 3rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .about__text-wrapper {
+    display: flex;
+    justify-content: space-between;
   }
 }
 .about__text {
@@ -125,9 +168,10 @@ nav a[href^="./index.html"] {
     padding-bottom: 4.5rem;
   }
 }
-.about__text--quote {
-  font-weight: 600;
-  line-height: 3rem;
+@media screen and (min-width: 768px) {
+  .about__text {
+    width: 48%;
+  }
 }
 
 .gallery {
