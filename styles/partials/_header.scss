@@ -1,20 +1,28 @@
 @use './variables' as *;
 @use './mixins' as *;
 @use './typography' as *;
+
 .header {
     background-color: $BandSite-Black;
     display: flex;
     flex-direction: column;
 
+    @include tablet {
+        flex-direction: row;
+    }
+
     &__logo {
         color: $White;
         text-align: center;
-        font-size: 2.5rem;
+        font-size: 3rem;
         font-weight: 400;
-        max-width: 15rem;
         line-height: 1;
         padding: 2rem 0rem 1rem;
         align-self: center;
+
+        @include tablet {
+            padding: 2rem 4.5rem 1rem;
+        }
 
         &:visited {
             color: $White;
@@ -26,11 +34,16 @@
     }
 
     &__navigation-item {
+        @include body-copy;
         color: $Mercury;
         text-align: center;
         padding: 1rem 0rem;
         flex: 1;
-        @include body-copy;
+
+        @include tablet {
+            padding: 3rem 0rem;
+            margin: 0rem 3rem;
+        }
 
         &:visited {
             color: $Mercury;
