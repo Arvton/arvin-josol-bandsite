@@ -18,6 +18,11 @@ body {
     padding: 0rem 4.5rem;
   }
 }
+@media screen and (min-width: 768px) {
+  .hero {
+    height: 57rem;
+  }
+}
 .hero::before {
   content: "";
   background-color: rgba(50, 50, 50, 0.5);
