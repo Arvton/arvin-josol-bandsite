@@ -179,10 +179,16 @@ nav a[href^="./index.html"] {
   display: flex;
   flex-direction: column;
   padding: 0rem 2rem;
+  padding-bottom: 2rem;
 }
 @media screen and (min-width: 768px) {
   .gallery {
     padding: 0rem 4.5rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .gallery {
+    padding-bottom: 4.5rem;
   }
 }
 .gallery__title {
@@ -203,14 +209,27 @@ nav a[href^="./index.html"] {
     padding: 6rem 0rem 3.5rem;
   }
 }
+.gallery__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .gallery__wrapper {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 3rem;
+  }
+}
 .gallery__image {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  padding-bottom: 2rem;
 }
 @media screen and (min-width: 768px) {
   .gallery__image {
-    padding-bottom: 4.5rem;
+    width: 31%;
   }
 }/*# sourceMappingURL=bio.css.map */

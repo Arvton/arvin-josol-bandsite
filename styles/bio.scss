@@ -96,6 +96,7 @@ nav {
     display: flex;
     flex-direction: column;
     @include padding-screen;
+    @include padding-components;
 
     &__title {
         @include section-header;
@@ -103,9 +104,26 @@ nav {
         @include padding-headline;
     }
 
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+
+        @include tablet {
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 3rem;
+        }
+    }
+
     &__image {
         width: 100%;
         object-fit: cover;
-        @include padding-components;
+
+        @include tablet {
+            width: 31%;
+        }
     }
 }
