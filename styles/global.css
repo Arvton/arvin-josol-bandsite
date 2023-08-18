@@ -100,6 +100,7 @@ body {
 
 .footer {
   background-color: #323232;
+  position: relative;
   padding: 0rem 2rem;
 }
 @media screen and (min-width: 768px) {
@@ -110,6 +111,13 @@ body {
 .footer__socials {
   display: flex;
   flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+  .footer__socials {
+    align-items: baseline;
+    flex-direction: row;
+    gap: 5rem;
+  }
 }
 .footer__title {
   font-size: 3rem;
@@ -139,11 +147,23 @@ body {
     padding-bottom: 4.5rem;
   }
 }
+@media screen and (min-width: 768px) {
+  .footer__icon-wrapper {
+    padding: 0rem;
+  }
+}
 .footer__icon {
   padding-right: 3rem;
 }
 .footer__contact-wrapper {
   padding-bottom: 5rem;
+}
+@media screen and (min-width: 768px) {
+  .footer__contact-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 4rem;
+  }
 }
 .footer__contact-card {
   font-size: 1.625rem;
@@ -164,7 +184,7 @@ body {
 }
 @media screen and (min-width: 768px) {
   .footer__contact-name {
-    padding-bottom: 4.5rem;
+    padding-bottom: 2.75rem;
   }
 }
 .footer__contact-info {
@@ -172,7 +192,7 @@ body {
 }
 @media screen and (min-width: 768px) {
   .footer__contact-info {
-    padding-bottom: 4.5rem;
+    padding-bottom: 2.75rem;
   }
 }
 .footer__contact-email {
@@ -180,15 +200,22 @@ body {
 }
 .footer__logo {
   color: #FFFFFF;
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: 400;
-  max-width: 15rem;
   line-height: 1;
   padding-bottom: 2rem;
 }
 @media screen and (min-width: 768px) {
   .footer__logo {
     padding-bottom: 4.5rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .footer__logo {
+    line-height: 1;
+    position: absolute;
+    top: 7.5rem;
+    right: 4.5rem;
   }
 }
 .footer__copyright {

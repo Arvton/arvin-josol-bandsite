@@ -4,11 +4,18 @@
 
 .footer {
     background-color: $BandSite-Black;
+    position: relative;
     @include padding-screen;
 
     &__socials {
         display: flex;
         flex-direction: column;
+
+        @include tablet {
+            align-items: baseline;
+            flex-direction: row;
+            gap: 5rem;
+        }
     }
 
     &__title {
@@ -21,6 +28,10 @@
     &__icon-wrapper {
         padding-top: 1rem;
         @include padding-components;
+
+        @include tablet {
+            padding: 0rem;
+        }
     }
 
     &__icon {
@@ -29,6 +40,12 @@
 
     &__contact-wrapper {
         padding-bottom: 5rem;
+
+        @include tablet {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 4rem;
+        }
     }
 
     &__contact-card {
@@ -39,11 +56,19 @@
 
     &__contact-name {
         font-weight: 600;
-        @include padding-components;
+        padding-bottom: 2rem;
+
+        @include tablet {
+            padding-bottom: 2.75rem;
+        }
     }
 
     &__contact-info {
-        @include padding-components;
+        padding-bottom: 2rem;
+
+        @include tablet {
+            padding-bottom: 2.75rem;
+        }
     }
 
     &__contact-email {
@@ -52,11 +77,17 @@
 
     &__logo {
         color: $White;
-        font-size: 2.5rem;
+        font-size: 3rem;
         font-weight: 400;
-        max-width: 15rem;
         line-height: 1;
         @include padding-components;
+
+        @include tablet {
+            line-height: 1;
+            position: absolute;
+            top: 7.5rem;
+            right: 4.5rem;
+        }
     }
 
     &__copyright {

@@ -7,7 +7,7 @@ body {
   background-image: url(../assets/images/hero-bio.jpg);
   background-position: center;
   background-size: cover;
-  height: 23rem;
+  aspect-ratio: 16/9;
   padding: 0rem 2rem;
   display: flex;
   align-items: center;
@@ -16,11 +16,6 @@ body {
 @media screen and (min-width: 768px) {
   .hero {
     padding: 0rem 4.5rem;
-  }
-}
-@media screen and (min-width: 768px) {
-  .hero {
-    height: 57rem;
   }
 }
 .hero::before {
@@ -85,7 +80,7 @@ nav a[href^="./index.html"] {
 }
 .about__image {
   width: 100%;
-  height: 22rem;
+  aspect-ratio: 16/9.5;
   -o-object-fit: cover;
      object-fit: cover;
   padding-bottom: 2rem;
@@ -93,11 +88,6 @@ nav a[href^="./index.html"] {
 @media screen and (min-width: 768px) {
   .about__image {
     padding-bottom: 4.5rem;
-  }
-}
-@media screen and (min-width: 768px) {
-  .about__image {
-    height: 43rem;
   }
 }
 .about__quote {
