@@ -12,6 +12,14 @@
     align-items: center;
     position: relative;
 
+    @include tablet {
+        aspect-ratio: 16/9.5;
+    }
+
+    @include desktop {
+        aspect-ratio: 16/8;
+    }
+
     &::before {
         content: "";
         background-color: rgba($color: $BandSite-Black, $alpha: 0.5);
@@ -22,9 +30,17 @@
         left: 0px;
     }
 
+    &__title-container {
+        z-index: 1;
+
+        @include desktop {
+            margin: 0 auto;
+            width: 126rem;
+        }
+    }
+
     &__title {
         @include page-header;
         color: $White;
-        z-index: 1;
     }
 }

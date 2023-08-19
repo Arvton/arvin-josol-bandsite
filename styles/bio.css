@@ -18,6 +18,16 @@ body {
     padding: 0rem 4.5rem;
   }
 }
+@media screen and (min-width: 768px) {
+  .hero {
+    aspect-ratio: 16/9.5;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .hero {
+    aspect-ratio: 16/8;
+  }
+}
 .hero::before {
   content: "";
   background-color: rgba(50, 50, 50, 0.5);
@@ -27,12 +37,20 @@ body {
   bottom: 0px;
   left: 0px;
 }
+.hero__title-container {
+  z-index: 1;
+}
+@media screen and (min-width: 1280px) {
+  .hero__title-container {
+    margin: 0 auto;
+    width: 126rem;
+  }
+}
 .hero__title {
   font-size: 3rem;
   line-height: 4rem;
   font-weight: 700;
   color: #FFFFFF;
-  z-index: 1;
 }
 @media screen and (min-width: 768px) {
   .hero__title {
@@ -53,6 +71,12 @@ nav a[href^="./index.html"] {
 @media screen and (min-width: 768px) {
   .about {
     padding: 0rem 4.5rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .about__container {
+    margin: 0 auto;
+    max-width: 126rem;
   }
 }
 .about__title {
@@ -78,6 +102,11 @@ nav a[href^="./index.html"] {
     padding: 0rem 8rem;
   }
 }
+@media screen and (min-width: 1280px) {
+  .about__content-wrapper {
+    padding: 0rem 9rem;
+  }
+}
 .about__image {
   width: 100%;
   aspect-ratio: 16/9.5;
@@ -88,6 +117,11 @@ nav a[href^="./index.html"] {
 @media screen and (min-width: 768px) {
   .about__image {
     padding-bottom: 4.5rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .about__quote-container {
+    max-width: 82rem;
   }
 }
 .about__quote {
@@ -181,6 +215,12 @@ nav a[href^="./index.html"] {
     padding-bottom: 4.5rem;
   }
 }
+@media screen and (min-width: 1280px) {
+  .gallery__container {
+    margin: 0 auto;
+    max-width: 126rem;
+  }
+}
 .gallery__title {
   font-size: 3rem;
   line-height: 4rem;
@@ -199,7 +239,7 @@ nav a[href^="./index.html"] {
     padding: 6rem 0rem 3.5rem;
   }
 }
-.gallery__wrapper {
+.gallery__image-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -207,7 +247,7 @@ nav a[href^="./index.html"] {
   gap: 2rem;
 }
 @media screen and (min-width: 768px) {
-  .gallery__wrapper {
+  .gallery__image-wrapper {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 3rem;
@@ -221,5 +261,10 @@ nav a[href^="./index.html"] {
 @media screen and (min-width: 768px) {
   .gallery__image {
     width: 31%;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .gallery__image {
+    width: 31.5%;
   }
 }/*# sourceMappingURL=bio.css.map */

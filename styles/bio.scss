@@ -14,6 +14,13 @@ nav {
 .about {
     @include padding-screen;
 
+    &__container {
+        @include desktop {
+            margin: 0 auto;
+            max-width: 126rem;
+        }
+    }
+
     &__title {
         @include section-header;
         color: $BandSite-Black;
@@ -24,6 +31,9 @@ nav {
         @include tablet {
             padding: 0rem 8rem;
         }
+        @include desktop {
+            padding: 0rem 9rem;
+        }
     }
 
     &__image {
@@ -31,6 +41,12 @@ nav {
         aspect-ratio: 16/9.5;
         object-fit: cover;
         @include padding-components;
+    }
+
+    &__quote-container {
+        @include desktop {
+            max-width: 82rem;
+        }
     }
 
     &__quote {
@@ -94,13 +110,20 @@ nav {
     @include padding-screen;
     @include padding-components;
 
+    &__container {
+        @include desktop {
+            margin: 0 auto;
+            max-width: 126rem;
+        }
+    }
+
     &__title {
         @include section-header;
         color: $BandSite-Black;
         @include padding-headline;
     }
 
-    &__wrapper {
+    &__image-wrapper {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -120,6 +143,10 @@ nav {
 
         @include tablet {
             width: 31%;
+        }
+
+        @include desktop {
+            width: 31.5%;
         }
     }
 }
