@@ -2,6 +2,16 @@
 @use './mixins' as *;
 @use './typography' as *;
 
+@keyframes nav-line {
+    from {
+        border-bottom: solid 4px $White;
+    }
+
+    to {
+        border-bottom: solid 4px $BandSite-Black;
+    }
+}
+
 .header {
     background-color: $BandSite-Black;
 
@@ -63,7 +73,13 @@
 
         &:hover {
             color: $White;
+            animation: nav-line 250ms infinite alternate linear;
+        }
+
+        &--active {
+            color: $White;
             border-bottom: solid 4px $White;
+            font-weight: bold;
         }
     }
 }

@@ -59,12 +59,6 @@ body {
   }
 }
 
-nav a[href^="./index.html"] {
-  color: #FFFFFF;
-  border-bottom: solid 4px #FFFFFF;
-  font-weight: bold;
-}
-
 .about {
   padding: 0rem 2rem;
 }
@@ -257,6 +251,11 @@ nav a[href^="./index.html"] {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  filter: grayscale(1);
+  transition: all 0.25s ease-out;
+}
+.gallery__image:hover {
+  filter: grayscale(0);
 }
 @media screen and (min-width: 768px) {
   .gallery__image {

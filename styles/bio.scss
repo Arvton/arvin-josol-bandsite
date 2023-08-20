@@ -3,14 +3,6 @@
 @use './partials/typography' as *;
 @use './partials/hero';
 
-nav {
-    a[href^="./index.html"] {
-        color: $White;
-        border-bottom: solid 4px $White;
-        font-weight: bold;
-    }
-}
-
 .about {
     @include padding-screen;
 
@@ -31,6 +23,7 @@ nav {
         @include tablet {
             padding: 0rem 8rem;
         }
+
         @include desktop {
             padding: 0rem 9rem;
         }
@@ -140,6 +133,12 @@ nav {
     &__image {
         width: 100%;
         object-fit: cover;
+        filter: grayscale(1);
+        transition: all 0.25s ease-out;
+
+        &:hover {
+            filter: grayscale(0);
+        }
 
         @include tablet {
             width: 31%;

@@ -39,6 +39,14 @@ body {
   font-size: 2rem;
 }
 
+@keyframes nav-line {
+  from {
+    border-bottom: solid 4px #FFFFFF;
+  }
+  to {
+    border-bottom: solid 4px #323232;
+  }
+}
 .header {
   background-color: #323232;
 }
@@ -108,7 +116,12 @@ body {
 }
 .header__navigation-item:hover {
   color: #FFFFFF;
+  animation: nav-line 250ms infinite alternate linear;
+}
+.header__navigation-item--active {
+  color: #FFFFFF;
   border-bottom: solid 4px #FFFFFF;
+  font-weight: bold;
 }
 
 .footer {
