@@ -3,7 +3,6 @@
 @use './typography' as *;
 
 .hero {
-    background-image: url(../assets/images/hero-bio.jpg);
     background-position: center;
     background-size: cover;
     aspect-ratio: 16/9;
@@ -11,6 +10,14 @@
     display: flex;
     align-items: center;
     position: relative;
+
+    &--bio {
+        background-image: url(../assets/images/hero-bio.jpg);
+    }
+
+    &--shows {
+        background-image: url(../assets/images/hero-shows.jpg);
+    }
 
     @include tablet {
         aspect-ratio: 16/9.5;
@@ -39,8 +46,18 @@
         }
     }
 
+    &__sub-title {
+        @include subheader;
+        font-weight: 400;
+        color: $White;
+    }
+
     &__title {
         @include page-header;
         color: $White;
+    }
+
+    &__iframe {
+        padding-bottom: 3rem;
     }
 }

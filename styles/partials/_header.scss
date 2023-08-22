@@ -80,6 +80,10 @@
             color: $White;
             border-bottom: solid 4px $White;
             font-weight: bold;
+
+            &:visited {
+                color: $White;
+            }
         }
     }
 }

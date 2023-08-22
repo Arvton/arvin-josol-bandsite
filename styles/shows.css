@@ -1,0 +1,81 @@
+body {
+  font-family: "Avenir", Arial, sans-serif;
+  font-size: 2rem;
+}
+
+.hero {
+  background-position: center;
+  background-size: cover;
+  aspect-ratio: 16/9;
+  padding: 0rem 2rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+@media screen and (min-width: 768px) {
+  .hero {
+    padding: 0rem 4.5rem;
+  }
+}
+.hero--bio {
+  background-image: url(../assets/images/hero-bio.jpg);
+}
+.hero--shows {
+  background-image: url(../assets/images/hero-shows.jpg);
+}
+@media screen and (min-width: 768px) {
+  .hero {
+    aspect-ratio: 16/9.5;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .hero {
+    aspect-ratio: 16/8;
+  }
+}
+.hero::before {
+  content: "";
+  background-color: rgba(50, 50, 50, 0.5);
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+.hero__title-container {
+  z-index: 1;
+}
+@media screen and (min-width: 1280px) {
+  .hero__title-container {
+    margin: 0 auto;
+    width: 126rem;
+  }
+}
+.hero__sub-title {
+  font-size: 1.75rem;
+  line-height: 2.75rem;
+  font-weight: 600;
+  font-weight: 400;
+  color: #FFFFFF;
+}
+@media screen and (min-width: 768px) {
+  .hero__sub-title {
+    font-size: 3rem;
+    line-height: 4rem;
+  }
+}
+.hero__title {
+  font-size: 3rem;
+  line-height: 4rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+@media screen and (min-width: 768px) {
+  .hero__title {
+    font-size: 7.5rem;
+    line-height: 8.5rem;
+  }
+}
+.hero__iframe {
+  padding-bottom: 3rem;
+}/*# sourceMappingURL=shows.css.map */
