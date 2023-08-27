@@ -6,7 +6,6 @@ body {
 .hero {
   background-position: center;
   background-size: cover;
-  aspect-ratio: 16/9;
   padding: 0rem 2rem;
   display: flex;
   align-items: center;
@@ -19,17 +18,29 @@ body {
 }
 .hero--bio {
   background-image: url(../assets/images/hero-bio.jpg);
-}
-.hero--shows {
-  background-image: url(../assets/images/hero-shows.jpg);
+  aspect-ratio: 16/9;
 }
 @media screen and (min-width: 768px) {
-  .hero {
+  .hero--bio {
     aspect-ratio: 16/9.5;
   }
 }
 @media screen and (min-width: 1280px) {
-  .hero {
+  .hero--bio {
+    aspect-ratio: 16/8;
+  }
+}
+.hero--shows {
+  background-image: url(../assets/images/hero-shows.jpg);
+  aspect-ratio: 32/27;
+}
+@media screen and (min-width: 768px) {
+  .hero--shows {
+    aspect-ratio: 16/10;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .hero--shows {
     aspect-ratio: 16/8;
   }
 }
@@ -51,17 +62,40 @@ body {
     width: 126rem;
   }
 }
+.hero__title-container--shows {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 4rem 0rem 3rem;
+}
+@media screen and (min-width: 768px) {
+  .hero__title-container--shows {
+    padding: 7rem 0rem 6rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .hero__title-container--shows {
+    justify-content: center;
+  }
+}
 .hero__sub-title {
   font-size: 1.75rem;
   line-height: 2.75rem;
   font-weight: 600;
   font-weight: 400;
   color: #FFFFFF;
+  padding-bottom: 1.625rem;
 }
 @media screen and (min-width: 768px) {
   .hero__sub-title {
     font-size: 3rem;
     line-height: 4rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .hero__title-iframe-container {
+    display: flex;
+    gap: 13rem;
   }
 }
 .hero__title {
@@ -76,6 +110,35 @@ body {
     line-height: 8.5rem;
   }
 }
+.hero__title--shows {
+  padding-bottom: 1.625rem;
+}
+@media screen and (min-width: 768px) {
+  .hero__title--shows {
+    width: 80%;
+    padding-bottom: 6rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .hero__title--shows {
+    width: 50%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .hero__iframe-container {
+    width: 60%;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .hero__iframe-container {
+    width: 40%;
+  }
+}
 .hero__iframe {
-  padding-bottom: 3rem;
+  height: 12rem;
+}
+@media screen and (min-width: 768px) {
+  .hero__iframe {
+    height: 18rem;
+  }
 }/*# sourceMappingURL=shows.css.map */

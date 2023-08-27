@@ -5,7 +5,6 @@
 .hero {
     background-position: center;
     background-size: cover;
-    aspect-ratio: 16/9;
     @include padding-screen;
     display: flex;
     align-items: center;
@@ -13,18 +12,28 @@
 
     &--bio {
         background-image: url(../assets/images/hero-bio.jpg);
+        aspect-ratio: 16/9;
+
+        @include tablet {
+            aspect-ratio: 16/9.5;
+        }
+
+        @include desktop {
+            aspect-ratio: 16/8;
+        }
     }
 
     &--shows {
         background-image: url(../assets/images/hero-shows.jpg);
-    }
+        aspect-ratio: 32/27;
 
-    @include tablet {
-        aspect-ratio: 16/9.5;
-    }
+        @include tablet {
+            aspect-ratio: 16/10;
+        }
 
-    @include desktop {
-        aspect-ratio: 16/8;
+        @include desktop {
+            aspect-ratio: 16/8;
+        }
     }
 
     &::before {
@@ -44,20 +53,70 @@
             margin: 0 auto;
             width: 126rem;
         }
+
+        &--shows {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            padding: 4rem 0rem 3rem;
+
+            @include tablet {
+                padding: 7rem 0rem 6rem;
+            }
+
+            @include desktop {
+                justify-content: center;
+            }
+        }
     }
 
     &__sub-title {
         @include subheader;
         font-weight: 400;
         color: $White;
+        padding-bottom: 1.625rem;
+    }
+
+    &__title-iframe-container {
+        @include desktop {
+            display: flex;
+            gap: 13rem;
+        }
     }
 
     &__title {
         @include page-header;
         color: $White;
+
+        &--shows {
+            padding-bottom: 1.625rem;
+
+            @include tablet {
+                width: 80%;
+                padding-bottom: 6rem;
+            }
+
+            @include desktop {
+                width: 50%;
+            }
+        }
+    }
+
+    &__iframe-container {
+        @include tablet {
+            width: 60%;
+        }
+
+        @include desktop {
+            width: 40%;
+        }
     }
 
     &__iframe {
-        padding-bottom: 3rem;
+        height: 12rem;
+
+        @include tablet {
+            height: 18rem;
+        }
     }
 }
