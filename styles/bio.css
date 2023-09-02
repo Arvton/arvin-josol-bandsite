@@ -554,7 +554,7 @@ body, input, textarea {
   color: #323232;
   font-weight: 600;
 }
-.comments__date {
+.comments__timestamp {
   color: #AFAFAF;
 }
 .comments__text {
