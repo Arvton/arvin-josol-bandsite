@@ -37,3 +37,18 @@
         padding-bottom: 4.5rem;
     }
 }
+
+//divider mixins
+@mixin divider {
+    border-bottom: solid 1px $Mercury;
+    margin-bottom: 2rem;
+
+    @include tablet {
+        margin: 0rem 8rem 3rem;
+    }
+
+    @include desktop {
+        margin: 0rem auto 3rem;
+        max-width: 62rem;
+    }
+}

@@ -1,6 +1,6 @@
 @use './mixins' as *;
 
-body {
+body, input, textarea {
     font-family: "Avenir", Arial, sans-serif;
     font-size: 2rem;
 }

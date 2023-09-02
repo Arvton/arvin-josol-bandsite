@@ -149,3 +149,128 @@
         }
     }
 }
+
+.comments {
+    background-color: $White;
+    @include padding-screen;
+
+    &__title {
+        @include section-header;
+        font-weight: 600;
+        color: $BandSite-Black;
+        padding: 1.5rem 0rem;
+
+        @include tablet {
+            padding: 6rem 0rem 4.5rem;
+        }
+
+        @include desktop {
+            margin: 0 auto;
+            max-width: 126rem;
+        }
+    }
+
+    &__form {
+        display: flex;
+        gap: 2rem;
+
+        @include tablet {
+            padding: 0rem 8rem;
+            gap: 1.5rem;
+        }
+
+        @include desktop {
+            margin: 0 auto;
+            max-width: 78rem;
+        }
+
+        &-image {
+            width: 4.5rem;
+            height: 4.5rem;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-top: 2rem;
+
+            @include tablet {
+                width: 6rem;
+                height: 6rem;
+            }
+        }
+
+        &-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        &-label {
+            font-size: 1.25rem;
+            color: $Silver;
+            padding-bottom: 0.5rem;
+        }
+
+        &-input {
+            border: solid 1px $Mercury;
+            font-size: 1.5rem;
+            color: $BandSite-Black;
+            background-color: $Alabaster;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+
+            @include tablet {
+                padding: 2rem;
+            }
+
+            &--name {
+                margin-bottom: 3rem;
+
+                &::placeholder {
+                    color: $BandSite-Black;
+                }
+            }
+
+            &--comment {
+                overflow-y: scroll;
+                resize: none;
+                height: 12rem;
+                margin-bottom: 2rem;
+
+                &::placeholder {
+                    color: $BandSite-Black;
+                }
+
+                @include tablet {
+                    margin-bottom: 3rem;
+                }
+            }
+
+            &:active {
+                border: solid 1px $BandSite-Black;
+            }
+
+            &:invalid {
+                border: solid 1px #D22D2D;
+            }
+        }
+
+        &-button {
+            font-size: 2rem;
+            font-weight: 600;
+            color: $White;
+            background-color: $BandSite-Black;
+            border-radius: 0.5rem;
+            padding: 1.5rem 0rem;
+            margin-bottom: 2rem;
+
+            @include tablet {
+                align-self: flex-end;
+                width: 20rem;
+                margin-bottom: 3rem;
+            }
+        }
+    }
+
+    &__divider {
+        @include divider;
+    }
+}

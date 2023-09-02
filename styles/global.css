@@ -16,6 +16,10 @@ ul {
   list-style-type: none;
 }
 
+input, button {
+  border: none;
+}
+
 @font-face {
   font-family: "Avenir";
   src: url(../assets/fonts/AvenirNextLTPro-Regular.otf) format("opentype"), url(../assets/fonts/alternatives/AvenirNextLTPro.ttf) format("truetype");
@@ -34,7 +38,7 @@ ul {
   font-weight: 700;
   font-style: normal;
 }
-body {
+body, input, textarea {
   font-family: "Avenir", Arial, sans-serif;
   font-size: 2rem;
 }
