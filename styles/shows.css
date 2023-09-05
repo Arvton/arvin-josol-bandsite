@@ -145,11 +145,10 @@ body, input, textarea {
 
 .shows {
   background-color: #FFFFFF;
-  padding: 0rem 2rem;
 }
 @media screen and (min-width: 768px) {
   .shows {
-    padding: 0rem 4.5rem;
+    padding: 0rem 2rem 2rem;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -166,7 +165,7 @@ body, input, textarea {
   font-weight: 700;
   font-weight: 600;
   color: #323232;
-  padding: 4rem 0rem 3rem;
+  padding: 4rem 2rem 3rem;
 }
 @media screen and (min-width: 768px) {
   .shows__title {
@@ -176,12 +175,13 @@ body, input, textarea {
 }
 @media screen and (min-width: 768px) {
   .shows__title {
-    padding: 6.5rem 0rem 4.5rem;
+    padding: 6.5rem 2rem 4.5rem;
   }
 }
 @media screen and (min-width: 1280px) {
   .shows__title {
     width: 25%;
+    padding: 6.5rem 3rem 4.5rem;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -204,7 +204,7 @@ body, input, textarea {
 }
 @media screen and (min-width: 1280px) {
   .shows__table-header--date {
-    width: 34.5%;
+    width: 34%;
   }
 }
 .shows__table-header-container {
@@ -213,16 +213,19 @@ body, input, textarea {
 @media screen and (min-width: 768px) {
   .shows__table-header-container {
     display: flex;
+    padding: 0rem 2.5rem;
   }
 }
 .shows__card {
   display: flex;
   flex-direction: column;
+  padding: 0rem 2rem;
 }
 @media screen and (min-width: 768px) {
   .shows__card {
     flex-direction: row;
     align-items: baseline;
+    padding: 0rem 2.5rem;
   }
 }
 .shows__card-header {
@@ -274,12 +277,12 @@ body, input, textarea {
 @media screen and (min-width: 768px) {
   .shows__button {
     width: 19rem;
-    margin: 0rem 0rem 2rem auto;
+    margin: 2rem 0rem 2rem auto;
   }
 }
 @media screen and (min-width: 1280px) {
   .shows__button {
-    margin: 0rem 0rem 2rem 0rem;
+    margin: 2rem 0rem 2rem 0rem;
   }
 }
 .shows__divider {
@@ -290,17 +293,12 @@ body, input, textarea {
 @media screen and (min-width: 768px) {
   .shows__divider {
     display: block;
-    width: calc(100% + 4rem);
-    position: relative;
-    left: -2rem;
+    margin-bottom: 0rem;
   }
 }
 .shows__divider--mobile {
   border: solid 1px #E1E1E1;
-  position: relative;
-  width: calc(100% + 4rem);
-  left: -2rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 @media screen and (min-width: 768px) {
   .shows__divider--mobile {
