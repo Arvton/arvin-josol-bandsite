@@ -80,6 +80,27 @@ submitForm.addEventListener("submit", (event) => {
     // grabs name and comment from the form
     const nameInput = document.getElementById("input-name");
     const commentInput = document.getElementById("input-comment");
+    // check for blank form
+    if (nameInput.value == "" && commentInput.value == "") {
+        nameInput.required = "true";
+        nameInput.setAttribute("placeholder", "Please enter your name.");
+        commentInput.required = "true";
+        commentInput.setAttribute("placeholder", "Please enter your comment.");
+        return;
+    } else if (nameInput.value == "") {
+        nameInput.required = "true";
+        nameInput.setAttribute("placeholder", "Please enter your name.");
+        return;
+    } else if (commentInput.value == "") {
+        commentInput.required = "true";
+        commentInput.setAttribute("placeholder", "Please enter your comment.");
+        return;
+    } else {
+        nameInput.removeAttribute("required");
+        nameInput.setAttribute("placeholder", "Enter your name");
+        commentInput.removeAttribute("required");
+        commentInput.setAttribute("placeholder", "Add a new comment");
+    }
     // creates a formatted date using current date
     const fullDate = new Date();
     const year = fullDate.getFullYear();
