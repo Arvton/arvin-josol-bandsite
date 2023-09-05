@@ -273,6 +273,15 @@
 
     &__divider {
         @include divider;
+
+        @include tablet {
+            margin: 0rem 8rem 3rem;
+        }
+
+        @include desktop {
+            margin: 0rem auto 3rem;
+            max-width: 62rem;
+        }
     }
 
     &__card {

@@ -2,3 +2,152 @@
 @use './partials/mixins' as *;
 @use './partials/typography' as *;
 @use './partials/hero';
+
+.shows {
+    background-color: $White;
+    @include padding-screen;
+
+    @include desktop {
+        display: flex;
+        align-items: baseline;
+        margin: 0 auto;
+        max-width: 137rem;
+    }
+
+    &__title {
+        @include section-header;
+        font-weight: 600;
+        color: $BandSite-Black;
+        padding: 4rem 0rem 3rem;
+
+        @include tablet {
+            padding: 6.5rem 0rem 4.5rem;
+        }
+
+        @include desktop {
+            width: 25%;
+        }
+    }
+
+    &__table {
+        @include desktop {
+            width: 75%;
+        }
+
+        &-header {
+            width: 26%;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: $Silver;
+            padding-bottom: 2.5rem;
+
+            @include desktop {
+                width: 23%;
+                padding-bottom: 4.5rem;
+            }
+
+            &--date {
+                @include desktop {
+                    width: 34.5%;
+                }
+            }
+
+            &-container {
+                display: none;
+
+                @include tablet {
+                    display: flex;
+                }
+            }
+        }
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+
+        @include tablet {
+            flex-direction: row;
+            align-items: baseline;
+        }
+
+        &-header {
+            font-size: 1.25rem;
+            color: $Silver;
+            padding-bottom: 1rem;
+
+            @include tablet {
+                display: none;
+            }
+        }
+
+        &-text {
+            font-size: 1.5rem;
+            padding-bottom: 2rem;
+            color: $BandSite-Black;
+
+            @include tablet {
+                width: 26%;
+                font-size: 1.75rem;
+                padding-bottom: 0rem;
+            }
+
+            @include desktop {
+                width: 23%;
+            }
+
+            &--bold {
+                font-weight: 600;
+
+                @include desktop {
+                    width: 16rem;
+                    margin: 0rem auto 2rem 0;
+                }
+            }
+        }
+    }
+
+    &__button {
+        font-size: 2rem;
+        font-weight: 600;
+        color: $White;
+        background-color: $BandSite-Black;
+        border-radius: 0.5rem;
+        max-height: 5rem;
+        padding: 1.5rem 0rem;
+        margin: 0.5rem 0rem 2rem;
+
+        @include tablet {
+            width: 19rem;
+            margin: 0rem 0rem 2rem auto;
+        }
+
+        @include desktop {
+            margin: 0rem 0rem 2rem 0rem;
+        }
+    }
+
+    &__divider {
+        display: none;
+        @include divider;
+
+        @include tablet {
+            display: block;
+            width: calc(100% + 4rem);
+            position: relative;
+            left: -2rem;
+        }
+
+        &--mobile {
+            border: solid 1px $Mercury;
+            position: relative;
+            width: calc(100% + 4rem);
+            left: -2rem;
+            margin-bottom: 1.5rem;
+
+            @include tablet {
+                display: none;
+            }
+        }
+    }
+}
