@@ -104,15 +104,17 @@
                 <div class="comments__form-container">
                     <label class="comments__form-label" for="input-name">NAME</label>
                     <input class="comments__form-input comments__form-input--name" type="text" id="input-name"
-                        name="comment-name" placeholder="Enter your name">
+                        name="username" placeholder="Enter your name">
                     <label class="comments__form-label" for="input-comment">COMMENT</label>
                     <textarea class="comments__form-input comments__form-input--comment" type="text" id="input-comment"
-                        name="comment-content" placeholder="Add a new comment"></textarea>
+                        name="comment" placeholder="Add a new comment"></textarea>
                     <button class="comments__form-button">COMMENT</button>
                 </div>
             </form>
             <div class="comments__divider"></div>
-            <!-- this is where index-page.js will render comments -->
+            <div class="comments__display">
+                <!-- this is where index-page.js will render comments -->
+            </div>
         </section>
         <footer class="footer">
             <div class="footer__container">
