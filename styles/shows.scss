@@ -4,7 +4,7 @@
 @use './partials/hero';
 
 .shows {
-    background-color: $White;
+    background-color: $primary-three;
 
     @include tablet {
         padding: 0rem 2rem 2rem;
@@ -20,7 +20,7 @@
     &__title {
         @include section-header;
         font-weight: 600;
-        color: $BandSite-Black;
+        color: $primary-one;
         padding: 4rem 2rem 3rem;
 
         @include tablet {
@@ -42,7 +42,7 @@
             width: 26%;
             font-size: 1.5rem;
             font-weight: 600;
-            color: $Silver;
+            color: $primary-two;
             padding-bottom: 2.5rem;
 
             @include desktop {
@@ -79,16 +79,16 @@
         }
 
         &:hover {
-            background-color: $Alabaster;
+            background-color: $secondary-three;
         }
 
         &--selected {
-            background-color: $Mercury;
+            background-color: $secondary-two;
         }
 
         &-header {
             font-size: 1.25rem;
-            color: $Silver;
+            color: $primary-two;
             padding-bottom: 1rem;
 
             @include tablet {
@@ -99,7 +99,7 @@
         &-text {
             font-size: 1.5rem;
             padding-bottom: 2rem;
-            color: $BandSite-Black;
+            color: $primary-one;
 
             @include tablet {
                 width: 26%;
@@ -125,8 +125,8 @@
     &__button {
         font-size: 2rem;
         font-weight: 600;
-        color: $White;
-        background-color: $BandSite-Black;
+        color: $primary-three;
+        background-color: $primary-one;
         border-radius: 0.5rem;
         max-height: 5rem;
         padding: 1.5rem 0rem;
@@ -152,7 +152,7 @@
         }
 
         &--mobile {
-            border: solid 1px $Mercury;
+            border: solid 1px $secondary-two;
 
             @include tablet {
                 display: none;

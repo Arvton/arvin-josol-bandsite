@@ -15,7 +15,7 @@
 
     &__title {
         @include section-header;
-        color: $BandSite-Black;
+        color: $primary-one;
         @include padding-headline;
     }
 
@@ -43,7 +43,7 @@
     }
 
     &__quote {
-        color: $BandSite-Black;
+        color: $primary-one;
         font-size: 1.625rem;
         line-height: 3rem;
         font-weight: 600;
@@ -57,7 +57,7 @@
     }
 
     &__quote-credit {
-        color: $BandSite-Black;
+        color: $primary-one;
         font-size: 1.625rem;
         line-height: 3rem;
         font-weight: 600;
@@ -87,7 +87,7 @@
 
     &__text {
         @include body-copy;
-        color: $BandSite-Black;
+        color: $primary-one;
         @include padding-components;
 
         @include tablet {
@@ -97,7 +97,7 @@
 }
 
 .gallery {
-    background-color: $Alabaster;
+    background-color: $secondary-three;
     display: flex;
     flex-direction: column;
     @include padding-screen;
@@ -112,7 +112,7 @@
 
     &__title {
         @include section-header;
-        color: $BandSite-Black;
+        color: $primary-one;
         @include padding-headline;
     }
 
@@ -151,13 +151,13 @@
 }
 
 .comments {
-    background-color: $White;
+    background-color: $primary-three;
     @include padding-screen;
 
     &__title {
         @include section-header;
         font-weight: 600;
-        color: $BandSite-Black;
+        color: $primary-one;
         padding: 1.5rem 0rem;
 
         @include tablet {
@@ -205,15 +205,15 @@
 
         &-label {
             font-size: 1.25rem;
-            color: $Silver;
+            color: $primary-two;
             padding-bottom: 0.5rem;
         }
 
         &-input {
-            border: solid 1px $Mercury;
+            border: solid 1px $secondary-two;
             font-size: 1.5rem;
-            color: $BandSite-Black;
-            background-color: $Alabaster;
+            color: $primary-one;
+            background-color: $secondary-three;
             border-radius: 0.5rem;
             padding: 1.5rem;
 
@@ -225,7 +225,7 @@
                 margin-bottom: 3rem;
 
                 &::placeholder {
-                    color: $BandSite-Black;
+                    color: $primary-one;
                 }
             }
 
@@ -236,7 +236,7 @@
                 margin-bottom: 2rem;
 
                 &::placeholder {
-                    color: $BandSite-Black;
+                    color: $primary-one;
                 }
 
                 @include tablet {
@@ -245,7 +245,7 @@
             }
 
             &:active {
-                border: solid 1px $BandSite-Black;
+                border: solid 1px $primary-one;
             }
 
             &:invalid {
@@ -256,8 +256,8 @@
         &-button {
             font-size: 2rem;
             font-weight: 600;
-            color: $White;
-            background-color: $BandSite-Black;
+            color: $primary-three;
+            background-color: $primary-one;
             border-radius: 0.5rem;
             max-height: 5rem;
             padding: 1.5rem 0rem;
@@ -301,7 +301,7 @@
     }
 
     &__avatar {
-        background-color: $Mercury;
+        background-color: $secondary-two;
         width: 4.5rem;
         height: 4.5rem;
         border-radius: 50%;
@@ -325,12 +325,12 @@
     }
 
     &__username {
-        color: $BandSite-Black;
+        color: $primary-one;
         font-weight: 600;
     }
 
     &__timestamp {
-        color: $Silver;
+        color: $primary-two;
     }
 
     &__text {

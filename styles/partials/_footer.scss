@@ -3,7 +3,7 @@
 @use './typography' as *;
 
 .footer {
-    background-color: $BandSite-Black;
+    background-color: $primary-one;
     @include padding-screen;
 
     &__container {
@@ -33,7 +33,7 @@
     &__title {
         @include section-header;
         font-weight: 600;
-        color: $White;
+        color: $primary-three;
         @include padding-headline;
     }
 
@@ -63,7 +63,7 @@
 
     &__contact-card {
         @include footer-copy;
-        color: $White;
+        color: $primary-three;
         padding-bottom: 3rem;
     }
 
@@ -85,11 +85,11 @@
     }
 
     &__contact-email {
-        color: $White;
+        color: $primary-three;
     }
 
     &__logo {
-        color: $White;
+        color: $primary-three;
         font-size: 3rem;
         font-weight: 400;
         line-height: 1;
@@ -106,7 +106,7 @@
     &__copyright {
         @include footer-copy;
         font-size: 1.25rem;
-        color: $White;
+        color: $primary-three;
         @include padding-components;
     }
 }

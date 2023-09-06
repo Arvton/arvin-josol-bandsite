@@ -38,7 +38,7 @@
 
     &::before {
         content: "";
-        background-color: rgba($color: $BandSite-Black, $alpha: 0.5);
+        background-color: rgba($color: $primary-one, $alpha: 0.5);
         position: absolute;
         top: 0px;
         right: 0px;
@@ -73,7 +73,7 @@
     &__sub-title {
         @include subheader;
         font-weight: 400;
-        color: $White;
+        color: $primary-three;
         padding-bottom: 1.625rem;
     }
 
@@ -86,7 +86,7 @@
 
     &__title {
         @include page-header;
-        color: $White;
+        color: $primary-three;
 
         &--shows {
             padding-bottom: 1.625rem;
