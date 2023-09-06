@@ -219,7 +219,7 @@ body, input, textarea {
 .shows__card {
   display: flex;
   flex-direction: column;
-  padding: 0rem 2rem;
+  padding: 2rem 2rem 0rem;
 }
 @media screen and (min-width: 768px) {
   .shows__card {
@@ -227,6 +227,12 @@ body, input, textarea {
     align-items: baseline;
     padding: 0rem 2.5rem;
   }
+}
+.shows__card:hover {
+  background-color: #FAFAFA;
+}
+.shows__card--selected {
+  background-color: #E1E1E1;
 }
 .shows__card-header {
   font-size: 1.25rem;
@@ -298,7 +304,6 @@ body, input, textarea {
 }
 .shows__divider--mobile {
   border: solid 1px #E1E1E1;
-  margin-bottom: 2rem;
 }
 @media screen and (min-width: 768px) {
   .shows__divider--mobile {

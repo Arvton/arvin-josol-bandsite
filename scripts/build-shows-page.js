@@ -1,3 +1,4 @@
+//  array with all the shows information as an object
 const showsArray = [
     {
         date: "Mon Sept 06 2021",
@@ -34,8 +35,9 @@ const showsArray = [
         venue: "Press Club",
         location: "San Francisco, CA"
     }
-]
+];
 
+// creates the shows section, title, and table header container
 const main = document.querySelector("main");
 
 const showsSection = document.createElement("section");
@@ -55,12 +57,13 @@ const showsHeaderContainer = document.createElement("div");
 showsHeaderContainer.setAttribute("class", "shows__table-header-container");
 showsTable.appendChild(showsHeaderContainer);
 
+// loop that creates all the table headers inside table header container
 for (let i = 0; i < 3; i++) {
     const showsTableHeader = document.createElement("h3");
     showsTableHeader.setAttribute("class", "shows__table-header");
     switch (i) {
         case 0:
-            showsTableHeader.setAttribute("class", "shows__table-header shows__table-header--date");
+            showsTableHeader.classList.add("shows__table-header--date");
             showsTableHeader.innerText = "DATE";
             break;
         case 1:
@@ -75,12 +78,14 @@ for (let i = 0; i < 3; i++) {
     showsHeaderContainer.appendChild(showsTableHeader);
 }
 
+// creates all the show cards which are separated by a divider
 for (let i = 0; i < showsArray.length; i++) {
     const showsCard = document.createElement("div");
     showsCard.setAttribute("class", "shows__card");
     showsTable.appendChild(showsCard);
 
     const showsArrayObject = showsArray[i];
+    // loop that creates all the card-headers and card-text
     for (let i = 0; i < 3; i++) {
         const showsCardHeader = document.createElement("p");
         showsCardHeader.setAttribute("class", "shows__card-header");
@@ -89,7 +94,7 @@ for (let i = 0; i < showsArray.length; i++) {
         switch (i) {
             case 0:
                 showsCardHeader.innerText = "DATE";
-                showsCardText.setAttribute("class", "shows__card-text shows__card-text--bold");
+                showsCardText.classList.add("shows__card-text--bold");
                 showsCardText.innerText = showsArrayObject.date;
                 break;
             case 1:
@@ -107,11 +112,13 @@ for (let i = 0; i < showsArray.length; i++) {
         showsCard.appendChild(showsCardText);
     }
 
+    // adds a button to the shows card
     const showsButton = document.createElement("button");
     showsButton.setAttribute("class", "shows__button");
     showsButton.innerText = "BUY TICKETS";
     showsCard.appendChild(showsButton);
 
+    //adds a divider to the shows table
     const showsDivider = document.createElement("div");
     showsDivider.setAttribute("class", "shows__divider")
     showsTable.appendChild(showsDivider);
@@ -119,4 +126,21 @@ for (let i = 0; i < showsArray.length; i++) {
     const showsDividerMobile = document.createElement("div");
     showsDividerMobile.setAttribute("class", "shows__divider--mobile")
     showsTable.appendChild(showsDividerMobile);
+}
+
+// selects all shows__card elements
+const showsCardsElements = document.querySelectorAll(".shows__card");
+
+// create a variable to keep track of selected card
+let selectedCard = null;
+
+// adds listener that removes previously selected class, adds currently selected, updates tracking of selected card
+for (let i = 0; i < showsCardsElements.length; i++) {
+    showsCardsElements[i].addEventListener("click", () => {
+        if (selectedCard !== null) {
+            selectedCard.classList.remove("shows__card--selected"); // Remove the class from the previously selected card.
+        }
+        showsCardsElements[i].classList.add("shows__card--selected");
+        selectedCard = showsCardsElements[i]; // Update the selected card.
+    });
 }
