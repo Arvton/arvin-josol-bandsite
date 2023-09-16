@@ -1,22 +1,7 @@
-const commentsArray = [
-    {
-        username: "Miles Acosta",
-        date: "12/20/2020",
-        text: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough."
-    },
+const baseURL = "https://project-1-api.herokuapp.com"
+const apiKey = "?api_key=d7303870-e255-47ec-b639-d4e3097cac65"
 
-    {
-        username: "Emilie Beach",
-        date: "01/09/2021",
-        text: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day."
-    },
-
-    {
-        username: "Connor Walton",
-        date: "02/17/2021",
-        text: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains."
-    }
-];
+const commentsEndpoint = "/comments"
 
 // variable for the section where elements need to be added.
 // will need for:
@@ -24,7 +9,7 @@ const commentsArray = [
 // 2. clearing all comments
 const commentsDisplay = document.querySelector(".comments__display");
 
-//  function that creates one comment with needed CSS selectors
+//  function that creates one comment with needed CSS selectors and expected array object contents
 const displayComment = (arrayItem) => {
     const commentsCard = document.createElement("div");
     commentsCard.setAttribute("class", "comments__card")
@@ -44,17 +29,25 @@ const displayComment = (arrayItem) => {
 
     const commentsUsername = document.createElement("p");
     commentsUsername.setAttribute("class", "comments__username");
-    commentsUsername.innerText = arrayItem.username;
+    commentsUsername.innerText = arrayItem.name;
     commentsData.appendChild(commentsUsername);
 
     const commentsDate = document.createElement("p");
     commentsDate.setAttribute("class", "comments__timestamp");
-    commentsDate.innerText = arrayItem.date;
+
+    // convert timestamp to readable date
+    const timestamp = arrayItem.timestamp;
+    const commentTimestamp = new Date(timestamp);
+    const year = commentTimestamp.getFullYear();
+    const month = commentTimestamp.getMonth() + 1;
+    const day = commentTimestamp.getDate();
+    const formattedDate = `${month}/${day}/${year}`
+    commentsDate.innerText = formattedDate;
     commentsData.appendChild(commentsDate);
 
     const commentsText = document.createElement("p");
     commentsText.setAttribute("class", "comments__text");
-    commentsText.innerText = arrayItem.text;
+    commentsText.innerText = arrayItem.comment;
     commentsContentContainer.appendChild(commentsText);
 
     const commentsDivider = document.createElement("div");
@@ -64,13 +57,28 @@ const displayComment = (arrayItem) => {
 
 // function that loops through the array of comments and displays each comment object
 const displayAllComments = (commentsArray) => {
-    for (let i = commentsArray.length - 1; i >= 0; i--) {
-        displayComment(commentsArray[i]);
-    }
+    commentsArray.forEach((comment) => {
+        displayComment(comment)
+    })
 }
 
-// displays all default comments
-displayAllComments(commentsArray);
+// requests comments from comments endpoint and displays all comments
+const getAllComments = () => {
+    const commentsRequest = axios.get(`${baseURL}${commentsEndpoint}${apiKey}`)
+    commentsRequest.then((comments) => {
+        const commentsArray = []
+        comments.data.forEach(comment => {
+            commentsArray.push(comment)
+        })
+        // array needs sorting since data from API isn't sorted
+        commentsArray.sort((y, x) => {
+            return x.timestamp - y.timestamp;
+        })
+        displayAllComments(commentsArray);
+    })
+}
+
+getAllComments()
 
 // add a form submit listener
 const submitForm = document.querySelector(".comments__form")
@@ -81,7 +89,7 @@ submitForm.addEventListener("submit", (event) => {
     const nameInput = document.getElementById("input-name");
     const commentInput = document.getElementById("input-comment");
     // check for blank form
-    if (nameInput.value == "" && commentInput.value == "") {
+    if (nameInput.value == "" & commentInput.value == "") {
         nameInput.required = "true";
         nameInput.setAttribute("placeholder", "Please enter your name.");
         commentInput.required = "true";
@@ -101,23 +109,23 @@ submitForm.addEventListener("submit", (event) => {
         commentInput.removeAttribute("required");
         commentInput.setAttribute("placeholder", "Add a new comment");
     }
-    // creates a formatted date using current date
-    const fullDate = new Date();
-    const year = fullDate.getFullYear();
-    const month = fullDate.getMonth() + 1;
-    const day = fullDate.getDate();
-    const formattedDate = `${month}/${day}/${year}`;
-    // pushes name, comment, and formatted date to comment array
+    // create object with new comment data to post to comments API
     const newComment = {
-        username: nameInput.value,
-        date: formattedDate,
-        text: commentInput.value
+        name: nameInput.value,
+        comment: commentInput.value
     }
-    commentsArray.push(newComment);
-    // clears all comments
-    commentsDisplay.innerText = "";
-    // displays all comments including new one
-    displayAllComments(commentsArray);
-    // resets the form
-    submitForm.reset();
+    // create function to post new comment to comments API
+    const commentsPost = (newComment) => {
+        axios.post(`${baseURL}${commentsEndpoint}${apiKey}`, newComment)
+            .then(() => {
+                // clears all comments
+                commentsDisplay.innerText = "";
+                // displays all comments including new one
+                getAllComments();
+                // resets the form
+                submitForm.reset();
+            })
+    }
+    // post new comment to API
+    commentsPost(newComment)
 })
