@@ -80,10 +80,16 @@
 
         &:hover {
             background-color: $secondary-three;
+            cursor: pointer;
         }
 
         &--selected {
             background-color: $secondary-two;
+
+            &:hover {
+                background-color: $secondary-two;
+                cursor: pointer;
+            }
         }
 
         &-header {

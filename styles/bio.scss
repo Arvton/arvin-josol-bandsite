@@ -262,6 +262,7 @@
             max-height: 5rem;
             padding: 1.5rem 0rem;
             margin-bottom: 2rem;
+            cursor: pointer;
 
             @include tablet {
                 align-self: flex-end;

@@ -230,9 +230,14 @@ body, input, textarea {
 }
 .shows__card:hover {
   background-color: #FAFAFA;
+  cursor: pointer;
 }
 .shows__card--selected {
   background-color: #E1E1E1;
+}
+.shows__card--selected:hover {
+  background-color: #E1E1E1;
+  cursor: pointer;
 }
 .shows__card-header {
   font-size: 1.25rem;

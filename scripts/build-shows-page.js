@@ -46,62 +46,64 @@ const createShowsLayout = () => {
         showsHeaderContainer.appendChild(showsTableHeader);
     }
 }
+const displayShow = (show) => {
+    const showsCard = document.createElement("div");
+    showsCard.setAttribute("class", "shows__card");
+    showsTable.appendChild(showsCard);
+
+    // loop that creates all the card-headers and card-text
+    for (let i = 0; i < 3; i++) {
+        const showsCardHeader = document.createElement("p");
+        showsCardHeader.setAttribute("class", "shows__card-header");
+        const showsCardText = document.createElement("p");
+        showsCardText.setAttribute("class", "shows__card-text");
+        switch (i) {
+            case 0:
+                showsCardHeader.innerText = "DATE";
+                showsCardText.classList.add("shows__card-text--bold");
+                const timestamp = show.date;
+                const showTimestamp = new Date(timestamp);
+                const year = showTimestamp.getFullYear();
+                const month = showTimestamp.getMonth() + 1;
+                const day = showTimestamp.getDate();
+                const formattedDate = `${month}/${day}/${year}`
+                showsCardText.innerText = formattedDate;
+                break;
+            case 1:
+                showsCardHeader.innerText = "VENUE";
+                showsCardText.innerText = show.place;
+                break;
+            case 2:
+                showsCardHeader.innerText = "LOCATION";
+                showsCardText.innerText = show.location;
+                break;
+            default:
+                break;
+        }
+        showsCard.appendChild(showsCardHeader);
+        showsCard.appendChild(showsCardText);
+    }
+
+    // adds a button to the shows card
+    const showsButton = document.createElement("button");
+    showsButton.setAttribute("class", "shows__button");
+    showsButton.innerText = "BUY TICKETS";
+    showsCard.appendChild(showsButton);
+
+    //adds a divider to the shows table
+    const showsDivider = document.createElement("div");
+    showsDivider.setAttribute("class", "shows__divider")
+    showsTable.appendChild(showsDivider);
+
+    const showsDividerMobile = document.createElement("div");
+    showsDividerMobile.setAttribute("class", "shows__divider--mobile")
+    showsTable.appendChild(showsDividerMobile);
+}
 
 // creates all the show cards which are separated by a divider
 const displayAllShows = (showsArray) => {
     showsArray.forEach((show) => {
-
-        const showsCard = document.createElement("div");
-        showsCard.setAttribute("class", "shows__card");
-        showsTable.appendChild(showsCard);
-
-        // loop that creates all the card-headers and card-text
-        for (let i = 0; i < 3; i++) {
-            const showsCardHeader = document.createElement("p");
-            showsCardHeader.setAttribute("class", "shows__card-header");
-            const showsCardText = document.createElement("p");
-            showsCardText.setAttribute("class", "shows__card-text");
-            switch (i) {
-                case 0:
-                    showsCardHeader.innerText = "DATE";
-                    showsCardText.classList.add("shows__card-text--bold");
-                    const timestamp = show.date;
-                    const showTimestamp = new Date(timestamp);
-                    const year = showTimestamp.getFullYear();
-                    const month = showTimestamp.getMonth() + 1;
-                    const day = showTimestamp.getDate();
-                    const formattedDate = `${month}/${day}/${year}`
-                    showsCardText.innerText = formattedDate;
-                    break;
-                case 1:
-                    showsCardHeader.innerText = "VENUE";
-                    showsCardText.innerText = show.place;
-                    break;
-                case 2:
-                    showsCardHeader.innerText = "LOCATION";
-                    showsCardText.innerText = show.location;
-                    break;
-                default:
-                    break;
-            }
-            showsCard.appendChild(showsCardHeader);
-            showsCard.appendChild(showsCardText);
-        }
-
-        // adds a button to the shows card
-        const showsButton = document.createElement("button");
-        showsButton.setAttribute("class", "shows__button");
-        showsButton.innerText = "BUY TICKETS";
-        showsCard.appendChild(showsButton);
-
-        //adds a divider to the shows table
-        const showsDivider = document.createElement("div");
-        showsDivider.setAttribute("class", "shows__divider")
-        showsTable.appendChild(showsDivider);
-
-        const showsDividerMobile = document.createElement("div");
-        showsDividerMobile.setAttribute("class", "shows__divider--mobile")
-        showsTable.appendChild(showsDividerMobile);
+        displayShow(show)
     })
 }
 
