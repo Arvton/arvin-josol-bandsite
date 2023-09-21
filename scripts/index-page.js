@@ -13,6 +13,7 @@ const commentsDisplay = document.querySelector(".comments__display");
 const displayComment = (arrayItem) => {
     const commentsCard = document.createElement("div");
     commentsCard.setAttribute("class", "comments__card")
+    commentsCard.setAttribute("id", `comment-${arrayItem.id}`)
     commentsDisplay.appendChild(commentsCard);
 
     const commentsAvatar = document.createElement("div");
@@ -50,9 +51,63 @@ const displayComment = (arrayItem) => {
     commentsText.innerText = arrayItem.comment;
     commentsContentContainer.appendChild(commentsText);
 
+    commentsInteraction = document.createElement("div")
+    commentsInteraction.setAttribute("class", "comments__interaction")
+    commentsCard.appendChild(commentsInteraction)
+
+    const commentsDelete = document.createElement("img")
+    commentsDelete.setAttribute("src", "./assets/icons/SVG/icon-delete.svg")
+    commentsDelete.setAttribute("id", `delete-${arrayItem.id}`)
+    commentsInteraction.appendChild(commentsDelete)
+
+    const commentsLike = document.createElement("img")
+    commentsLike.setAttribute("src", "./assets/icons/SVG/icon-like.svg")
+    commentsLike.setAttribute("id", `like-${arrayItem.id}`)
+    commentsLike.setAttribute("class", "comments__like")
+    commentsInteraction.appendChild(commentsLike)
+
     const commentsDivider = document.createElement("div");
     commentsDivider.setAttribute("class", "comments__divider");
+    commentsDivider.setAttribute("id", `divider-${arrayItem.id}`)
     commentsDisplay.appendChild(commentsDivider);
+
+    // add event listener for deleting comments
+    const deleteById = document.getElementById(`delete-${arrayItem.id}`)
+    deleteById.addEventListener("click", () => {
+        // delete from DOM
+        const deleteComment = document.getElementById(`comment-${arrayItem.id}`)
+        const deleteDivider = document.getElementById(`divider-${arrayItem.id}`)
+        deleteComment.remove()
+        deleteDivider.remove()
+
+        // delete from API
+        const itemToDelete = `/${arrayItem.id}`
+        const deleteRequest = axios.delete(`${baseURL}${commentsEndpoint}${itemToDelete}${apiKey}`)
+        deleteRequest
+            .then(response => {
+                // not needed but nice to see API response
+                console.log(response)
+                console.log(`Deleted post with ID ${arrayItem.id}`);
+            })
+    })
+
+    // add event listener for liking comments
+    const likeById = document.getElementById(`like-${arrayItem.id}`)
+    likeById.addEventListener("click", () => {
+        // update the DOM
+        const likedComment = document.getElementById(`like-${arrayItem.id}`)
+        likedComment.classList.add("comments__like--selected")
+
+        // update the API
+        const itemToUpdate = `/${arrayItem.id}/like`
+        const updateRequest = axios.put(`${baseURL}${commentsEndpoint}${itemToUpdate}${apiKey}`)
+        updateRequest
+            .then(response => {
+                // not needed but nice to see API response and to see if the like count went up
+                console.log(response)
+                console.log(`Updated post with ID ${arrayItem.id}`);
+            })
+    })
 }
 
 // function that loops through the array of comments and displays each comment object
@@ -75,57 +130,62 @@ const getAllComments = () => {
             return x.timestamp - y.timestamp;
         })
         displayAllComments(commentsArray);
+
     })
 }
 
-getAllComments()
-
 // add a form submit listener
-const submitForm = document.querySelector(".comments__form")
-submitForm.addEventListener("submit", (event) => {
-    // prevents page refresh on submit
-    event.preventDefault();
-    // grabs name and comment from the form
-    const nameInput = document.getElementById("input-name");
-    const commentInput = document.getElementById("input-comment");
-    // check for blank form
-    if (nameInput.value == "" & commentInput.value == "") {
-        nameInput.required = "true";
-        nameInput.setAttribute("placeholder", "Please enter your name.");
-        commentInput.required = "true";
-        commentInput.setAttribute("placeholder", "Please enter your comment.");
-        return;
-    } else if (nameInput.value == "") {
-        nameInput.required = "true";
-        nameInput.setAttribute("placeholder", "Please enter your name.");
-        return;
-    } else if (commentInput.value == "") {
-        commentInput.required = "true";
-        commentInput.setAttribute("placeholder", "Please enter your comment.");
-        return;
-    } else {
-        nameInput.removeAttribute("required");
-        nameInput.setAttribute("placeholder", "Enter your name");
-        commentInput.removeAttribute("required");
-        commentInput.setAttribute("placeholder", "Add a new comment");
-    }
-    // create object with new comment data to post to comments API
-    const newComment = {
-        name: nameInput.value,
-        comment: commentInput.value
-    }
-    // create function to post new comment to comments API
-    const commentsPost = (newComment) => {
-        axios.post(`${baseURL}${commentsEndpoint}${apiKey}`, newComment)
-            .then(() => {
-                // clears all comments
-                commentsDisplay.innerText = "";
-                // displays all comments including new one
-                getAllComments();
-                // resets the form
-                submitForm.reset();
-            })
-    }
-    // post new comment to API
-    commentsPost(newComment)
-})
+const addSubmitFormListener = () => {
+    const submitForm = document.querySelector(".comments__form")
+    submitForm.addEventListener("submit", (event) => {
+        // prevents page refresh on submit
+        event.preventDefault();
+        // grabs name and comment from the form
+        const nameInput = document.getElementById("input-name");
+        const commentInput = document.getElementById("input-comment");
+        // check for blank form
+        if (nameInput.value == "" & commentInput.value == "") {
+            nameInput.required = "true";
+            nameInput.setAttribute("placeholder", "Please enter your name.");
+            commentInput.required = "true";
+            commentInput.setAttribute("placeholder", "Please enter your comment.");
+            return;
+        } else if (nameInput.value == "") {
+            nameInput.required = "true";
+            nameInput.setAttribute("placeholder", "Please enter your name.");
+            return;
+        } else if (commentInput.value == "") {
+            commentInput.required = "true";
+            commentInput.setAttribute("placeholder", "Please enter your comment.");
+            return;
+        } else {
+            nameInput.removeAttribute("required");
+            nameInput.setAttribute("placeholder", "Enter your name");
+            commentInput.removeAttribute("required");
+            commentInput.setAttribute("placeholder", "Add a new comment");
+        }
+        // create object with new comment data to post to comments API
+        const newComment = {
+            name: nameInput.value,
+            comment: commentInput.value
+        }
+        // create function to post new comment to comments API
+        const commentsPost = (newComment) => {
+            axios.post(`${baseURL}${commentsEndpoint}${apiKey}`, newComment)
+                .then(() => {
+                    // clears all comments
+                    commentsDisplay.innerText = "";
+                    // displays all comments including new one
+                    getAllComments();
+                    // resets the form
+                    submitForm.reset();
+                })
+        }
+        // post new comment to API
+        commentsPost(newComment)
+    })
+}
+
+// call functions for the page
+getAllComments()
+addSubmitFormListener()

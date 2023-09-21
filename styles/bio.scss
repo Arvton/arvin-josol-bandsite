@@ -342,4 +342,18 @@
         }
     }
 
+    &__interaction {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    &__like {
+        filter: invert(1);
+        transition: all 0.25s ease-out;
+
+        &--selected {
+            filter: invert(0);
+        }
+    }
 }

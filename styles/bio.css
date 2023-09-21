@@ -565,4 +565,16 @@ body, input, textarea {
   .comments__text {
     margin-bottom: 3rem;
   }
+}
+.comments__interaction {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.comments__like {
+  filter: invert(1);
+  transition: all 0.25s ease-out;
+}
+.comments__like--selected {
+  filter: invert(0);
 }/*# sourceMappingURL=bio.css.map */
